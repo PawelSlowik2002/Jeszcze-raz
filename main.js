@@ -37,5 +37,9 @@ function previousSong() {
 }
 
 function changeProgressValue() {
-    const progressBar = document.querySelector("#progressBar")
+    const progressBar = document.querySelector("#progressBar");
+    progressBar.max = document.querySelector("#song").duration;
+    progressBar.value = document.querySelector("song").currentTime;
+    changeProgressValue();
 }
+setInterval(changeProgressValue(), 700);
