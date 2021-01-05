@@ -13,11 +13,17 @@
     <!-- <img src="./zdjęcia/maxresdefault.jpg" alt="" id="background" /> -->
     <audio controls>
         <source src="./Koza-Beton.mp3" type="audio/mpeg">
-            <source src="./hot16 Piorun ft. Dario.mp3" type="audio/mpeg">
-                <source src="./ZetHa ft. Borixon, ReTo - Wesoły Numer O Smutnych Rzeczach.mp3" type="audio/mpeg">
+        <source src="./hot16 Piorun ft. Dario.mp3" type="audio/mpeg">
+        <source src="./ZetHa ft. Borixon, ReTo - Wesoły Numer O Smutnych Rzeczach.mp3" type="audio/mpeg">
     </audio>
     <audio src="./Koza-Beton.mp3" id="song"> </audio>
     <div class="controlpanel">
+        <div class="controlpanel__text">
+            <div class="song__title">
+                <h2>Koza beton</h2>
+            </div>
+
+        </div>
         <div class="controlpanel__image">
 
             <image src="./zdjęcia/previous.png" class="controlpanel__image--one" onclick="previousSong()">
@@ -26,7 +32,8 @@
 
         </div>
         <div>
-            <input type="range" id="progressBar" min="0" max="" value="0" onchange="changeProgressBar()" />
+            <input type="range" id="progressBar" class="progressBar" min="0" max="" value="0"
+                onchange="changeProgressBar()" />
         </div>
 
         <div class="currentTime"> </div>
