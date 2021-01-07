@@ -3,7 +3,9 @@ const progressBar = document.querySelector("#progressBar")
 var playing = true;
 
 var songs = ["Koza-Beton.mp3" , "hot16 Piorun ft. Dario.mp3" , "ZetHa ft. Borixon, ReTo - Wesoły Numer O Smutnych Rzeczach.mp3"], songIndex = 0;
-
+thumbnails = ["./zdjęcia/maxresdefault.jpg" , "./zdjęcia/hot16piorunmario.png", "./zdjęcia/wesolynumerosmutnychrzeczach.png"];
+songArtists = ["Koza" , "Piorun ft: Dario" , "Zetha ft: Borixon , Reto"]; 
+songTitles = ["Beton" , "#Hot16challenge" , "Wesoły numer o smutnych rzeczach"];
 
 function playPause() {
     if (playing) {
@@ -24,6 +26,7 @@ function nextSong() {
     songIndex++;
     if (songIndex > 2) songIndex = 0;
     document.querySelector("#song").src = songs[songIndex];
+    document.querySelector("#thumbnails").src = thumbnails[songIndex];
     playing = true;
     playPause()
 }
