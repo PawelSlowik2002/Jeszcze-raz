@@ -2,8 +2,15 @@
     background-color: grey;
 }
 
+.thumbnail{
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: space-around;
+
+}
 .controlpanel {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     background-color: #413e3e;
@@ -19,7 +26,7 @@
     flex-direction: row;
     justify-content: center;
     padding-top: 1%;
-    position: absolute;
+    position: sticky;
 margin-left: auto;
 margin-right: auto;
 left: 0;
@@ -39,6 +46,16 @@ right: 0;
 .controlpanel__image--three {
     padding-left: 1%;
     padding-right: 1%;
+}
+
+.controlpanel__text{
+    position: fixed;
+    display: flex;
+margin: 1%;
+}
+.song__artist{
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .progressBar{
