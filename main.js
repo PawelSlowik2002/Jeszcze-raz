@@ -2,6 +2,7 @@ const play = document.querySelector("#play")
 const progressBar = document.querySelector("#progressBar")
 const songArtist = document.querySelector(".song__artist")
 const songTitle = document.querySelector(".song__title")
+const song = document.querySelector("#song")
 
 var playing = true;
 
@@ -48,3 +49,40 @@ function previousSong() {
     playPause()
 }
 
+// function changeprogressbar() {
+//     const progressBar = document.querySelector("#progressBar");
+//     progressBar.max = document.querySelector("#song").duration;
+//     progressBar.value = document.querySelector("#song").currentTime;
+// }
+// setInterval(changeprogressbar, 500);
+
+// function changeprogressValue() {
+//     const progressBar = document.querySelector("#progressBar");
+//     document.querySelector("#song").duration; = progressBar.value;
+// }
+
+function updateProgressValue() {
+    progressBar.max = song.duration;
+    progressBar.value = song.currentTime;
+    document.querySelector('.currentTime').innerHTML = (formatTime(Math.floor(song.currentTime)));
+    if (document.querySelector('.durationTime').innerHTML === "NaN:NaN") {
+        document.querySelector('.durationTime').innerHTML = "0:00";
+    } else {
+        document.querySelector('.durationTime').innerHTML = (formatTime(Math.floor(song.duration)));
+    }
+};
+
+function formatTime(seconds) {
+    let min = Math.floor((seconds / 60));
+    let sec = Math.floor(seconds - (min * 60));
+    if (sec < 10){ 
+        sec  = `0${sec}`;
+    };
+    return `${min}:${sec}`;
+};
+
+setInterval(updateProgressValue, 700);
+
+function changeProgressBar() {
+    song.currentTime = progressBar.value;
+};
