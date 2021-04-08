@@ -4,6 +4,12 @@ const songArtist = document.querySelector(".song__artist")
 const songTitle = document.querySelector(".song__title")
 const song = document.querySelector("#song")
 
+let recent_volume= document.querySelector('#volume'); 
+
+
+
+
+
 var playing = true;
 
 
@@ -85,4 +91,43 @@ setInterval(updateProgressValue, 700);
 
 function changeProgressBar() {
     song.currentTime = progressBar.value;
+
 };
+
+function volume_change(){
+	song.volume = recent_volume.value / 100;
+}
+
+let clickNumbers = 0;
+
+jQuery('#song__heart').on("click", function() {
+		clickNumbers++;
+    
+    if(clickNumbers % 2 == 0){
+    	jQuery('#song__heart').addClass('song__heart--fill');
+    } else {
+    	jQuery('#song__heart').removeClass('song__heart--fill');
+    }
+});
+
+
+function addTextArea(){
+    var div = document.getElementById('div__quotes');
+    div.innerHTML += "<textarea />";
+    div.innerHTML += "<br/>";
+}
+
+var showplaylist = document.querySelector(".showplaylist");
+var string = "";
+
+function publish() { 
+    string =  "<pre>"+document.querySelector("#div__quotes").value+"</pre>";
+    showplaylist.innerHTML = string;
+}
+
+const sidenavSwitcher = document.querySelector('.sidenav__button--switcher--js')
+
+sidenavSwitcher.addEventListener('click' , (e) => {
+    const sidenav = document.querySelector('.sidenav--js');
+    sidenav.classList.toggle('sidenav--visible');
+})
